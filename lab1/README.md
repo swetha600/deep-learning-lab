@@ -2,75 +2,63 @@
 
 ## Objective
 
-The objective of this project is to implement a **Single Layer Perceptron (SLP)** from scratch using Python for binary classification of authentic and forged banknotes. The project aims to understand the perceptron learning algorithm, including weight and bias initialization, prediction using the Step Activation Function, weight updates based on the perceptron learning rule, and model convergence. Additionally, the project explores the dataset through exploratory data analysis, evaluates model performance using various classification metrics, compares different learning rates, studies the effect of feature normalization, and compares the custom implementation with Scikit-learn's Perceptron.
+The objective of this project is to implement a **Single Layer Perceptron (SLP)** from scratch using Python for the binary classification of authentic and forged banknotes. The project aims to understand the perceptron learning algorithm, including weight initialization, bias updates, prediction using the Step Activation Function, and iterative learning through weight updates. The project also includes exploratory data analysis, feature normalization, model evaluation, visualization of the learning process, comparison with Scikit-learn's implementation, and the study of different learning rates and activation functions.
 
 ---
 
 ## Dataset Description
 
-The project uses the **Banknote Authentication Dataset**, which is a binary classification dataset obtained from the **UCI Machine Learning Repository**. The dataset contains **1,372 banknote samples**, each represented by four statistical features extracted from wavelet-transformed images of genuine and forged banknotes.
-
-**Features:**
-
-* **Variance** – Measures the variance of the wavelet-transformed image.
-* **Skewness** – Measures the asymmetry of the image distribution.
-* **Curtosis** – Measures the peakedness of the image distribution.
-* **Entropy** – Measures the randomness or complexity of the image.
-
-**Target Variable:**
-
-* **0** – Authentic Banknote
-* **1** – Forged Banknote
-
-The dataset is well suited for binary classification and is largely linearly separable, making it an ideal choice for implementing and studying the Single Layer Perceptron algorithm.
+The project uses the **Banknote Authentication Dataset** from the **UCI Machine Learning Repository**. The dataset consists of **1,372 banknote samples**, each represented by four statistical features extracted from wavelet-transformed images. These features are **Variance, Skewness, Curtosis, and Entropy**, while the target variable classifies each banknote as either **Authentic (0)** or **Forged (1)**. Since the dataset is largely linearly separable, it is well suited for demonstrating the working of a Single Layer Perceptron.
 
 ---
 
 ## Contents of the Jupyter Notebook (.ipynb)
 
-The notebook contains the complete implementation and evaluation of the Single Layer Perceptron. It includes:
+The notebook contains the complete implementation of the Single Layer Perceptron along with data preprocessing, exploratory data analysis, model training, and evaluation. The major sections include:
 
-* Importing the required Python libraries.
-* Loading and preprocessing the Banknote Authentication dataset.
-* Exploratory Data Analysis (EDA), including:
+* Importing required libraries
+* Loading and preprocessing the dataset
+* Feature normalization and train-test splitting
+* Exploratory Data Analysis
 
-  * Feature Histograms
+  * Histograms
   * Box Plots
   * Correlation Heatmap
   * Scatter Plots
-* Feature normalization using StandardScaler.
-* Splitting the dataset into training and testing sets.
-* Implementing the Single Layer Perceptron from scratch.
-* Training the perceptron using the Step Activation Function.
-* Monitoring model convergence through:
+* Implementation of the Single Layer Perceptron from scratch
+* Model training using the Step Activation Function
+* Performance evaluation using Accuracy, Precision, Recall, F1-Score, and Confusion Matrix
+* Visualization of:
 
   * Training Error vs Epoch
   * Weight Evolution
   * Bias Evolution
-* Evaluating model performance using:
+  * Learning Rate Comparison
+  * Decision Boundary
+* Additional experiments including:
 
-  * Accuracy
-  * Precision
-  * Recall
-  * F1-score
-  * Confusion Matrix
-* Visualizing the learned Decision Boundary.
-* Comparing learning rates (0.001, 0.01, and 0.1).
-* Comparing the custom implementation with Scikit-learn's Perceptron.
-* Discussing the Step and Sigmoid activation functions.
-* Explaining why a Single Layer Perceptron cannot solve the XOR problem.
-* Studying the effect of feature normalization on model convergence.
+  * Step vs Sigmoid Activation Function
+  * Scikit-learn Perceptron Comparison
+  * XOR Problem
+  * Effect of Feature Normalization
 
 ---
 
 ## Results
 
-The implemented Single Layer Perceptron successfully learned a linear decision boundary for classifying authentic and forged banknotes. Exploratory Data Analysis showed that the extracted statistical features contain sufficient information for effective classification, with **Variance** being the most influential feature. Feature normalization improved the stability of training and enabled faster convergence.
+The implemented Single Layer Perceptron successfully learned a linear decision boundary and achieved excellent performance on the Banknote Authentication dataset. Feature normalization improved training stability and convergence, while the exploratory data analysis confirmed that the extracted statistical features provide good class separability.
 
-The model achieved high classification performance with an **accuracy of approximately 96.36%**, along with high precision, recall, and F1-score. The confusion matrix showed only a small number of misclassified samples, indicating that the perceptron effectively distinguishes between authentic and forged banknotes. The learning curves demonstrated steady convergence, while the weight and bias evolution plots confirmed that the model stabilized after several training epochs. The learning rate comparison further showed that, after normalization, different learning rates produced similar convergence behaviour due to the nearly linearly separable nature of the dataset.
+| **Evaluation Metric** | **Value**  |
+| --------------------- | ---------- |
+| Accuracy              | **96.36%** |
+| Precision             | **93.08%** |
+| Recall                | **99.18%** |
+| F1-Score              | **96.03%** |
+
+The model produced only a few misclassifications, as observed from the confusion matrix, and the training error gradually decreased until convergence. The learning rate comparison showed similar convergence for all three learning rates due to feature normalization and the nearly linearly separable nature of the dataset.
 
 ---
 
 ## Conclusion
 
-This project successfully demonstrated the implementation of a **Single Layer Perceptron from scratch** for binary classification. The results show that a perceptron can achieve excellent performance on linearly separable datasets such as the Banknote Authentication dataset. The experiment also highlights the importance of feature normalization, proper learning rate selection, and exploratory data analysis in improving model performance and convergence. Furthermore, the additional experiments provided a better understanding of activation functions, the limitations of linear classifiers such as the inability to solve the XOR problem, and the advantages of optimized implementations available in Scikit-learn. Overall, this project provides a strong foundation for understanding perceptrons and serves as an introduction to more advanced neural network architectures such as Multilayer Perceptrons and deep learning models.
+The project successfully demonstrates the implementation of a **Single Layer Perceptron** from scratch for binary classification. The model effectively classified authentic and forged banknotes with an accuracy of approximately **96.36%**, confirming that the dataset is largely linearly separable. The experiment also highlights the importance of feature normalization, appropriate learning rate selection, and exploratory data analysis in achieving stable convergence and high classification performance. Overall, this project provides a solid understanding of the perceptron learning algorithm and serves as a strong foundation for studying more advanced neural network models such as **Multilayer Perceptrons (MLPs)** and deep learning architectures.
